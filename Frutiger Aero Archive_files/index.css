@@ -1,0 +1,75 @@
+.gallery-articles h2 {
+  margin-bottom: 5px;
+}
+
+.gallery-containers a {
+  min-height: 0 !important;
+}
+
+.gallery-containers a:hover {
+  transform: scale(1.02);
+  transition-duration: 0.3s;
+}
+
+.gallery-containers img {
+  background: #121313;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  transition-duration: 0.3s;
+}
+
+.chat-ad-div img {
+  width: 100%;
+}
+
+.chatroom-ad-link {
+  transition-duration: 0.3s;
+}
+.chatroom-ad-link:hover {
+  filter: brightness(90%);
+  transition-duration: 0.3s;
+}
+
+.sources-container ul {
+  margin: 10px 0px 0px 40px;
+  list-style: disc;
+}
+
+.sources-container li {
+  margin: 5px 0px;
+}
+
+.sources-container a {
+  font-size: 1.08em;
+}
+
+/* IE10+ CSS styles */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .gallery-images-containers > * {
+    margin: 0px 5px 15px 5px;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 641px) {
+  #sources ul {
+    margin: 10px 0px 0px 25px;
+  }
+}
+
+@media (min-width: 0px) {
+  .gallery-images-containers {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 700px) {
+  .gallery-images-containers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
