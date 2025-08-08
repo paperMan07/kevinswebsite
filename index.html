@@ -3,10 +3,9 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style data-merge-styles="true"></style>
     <style data-merge-styles="true"></style><style data-merge-styles="true"></style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frutiger Aero Aesthetic - frutiger-aero.org</title>
+  <title>Kevin's Corner</title>
     <meta name="description" content="Frutiger Aero is an iconic design style of the mid-2000s to early 2010s, characterized by skeuomorphism, glossy textures, vibrant colors, and futuristic elements.">
     
-    <link rel="icon" type="image/png" href="./Frutiger Aero Aesthetic - frutiger-aero.org_files/vista_start.png">
     
     <link rel="alternate" hreflang="de" href="https://frutiger-aero.de/frutiger-aero">
     <link rel="alternate" hreflang="fr" href="https://frutiger-aero.fr/frutiger-aero">
@@ -14,32 +13,6 @@
     <link rel="alternate" hreflang="es" href="https://frutiger-aero.es/frutiger-aero">
     
     <script type="text/javascript" async="" src="./Frutiger Aero Aesthetic - frutiger-aero.org_files/pinit_main.js.download"></script><script async="" src="./Frutiger Aero Aesthetic - frutiger-aero.org_files/gtm.js.download"></script><script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https://frutiger-aero.org/frutiger-aero",
-      "name": "Frutiger Aero Aesthetic - frutiger-aero.org",
-      "author": {
-        "@type": "Organization",
-        "name": "Skeuoss",
-        "url": "https://skeuoss.net",
-        "sameAs": [
-          "https://www.pinterest.com/skeuoss",
-          "https://www.instagram.com/skeuoss_net",
-          "https://www.facebook.com/skeuoss",
-          "https://tiktok.com/@skeuoss.net",
-          "https://www.youtube.com/@skeuoss",
-          "https://discord.com/users/skeuoss",
-          "https://www.reddit.com/user/skeuoss"
-        ]
-      },
-      "description": "Frutiger Aero is an iconic design style of the mid-2000s to early 2010s, characterized by skeuomorphism, glossy textures, vibrant colors, and futuristic elements.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Skeuoss",
-        "url": "https://skeuoss.net"
-      }
-    }
 </script>
   <style>
     #fade-black {
@@ -1028,6 +1001,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul role="menu">
             <li role="menuitem"><a href="#" id="change-wallpaper">Change wallpaper</a></li>
             <li role="menuitem"><a href="#" id="fullscreen-window">Fullscreen</a></li>
+              <li role="menuitem"><a href="#" id="things-i-like-trigger">Things I Like</a></li>
           </ul>
         </li>
         <li role="menuitem" tabindex="0" aria-haspopup="true">
@@ -1062,6 +1036,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Popup Window for Save -->
       <!-- Popup Window for Patch Notes -->
+        <!-- Popup Window for Things I Like -->
+        <div class="window active" id="things-i-like-window" style="display:none; max-width: 340px; min-width: 220px; min-height: 180px; position: absolute; left: 50%; top: 260px; transform: translateX(-50%); z-index: 9999; flex-direction: column;">
+          <div class="title-bar">
+            <div class="title-bar-text">Things I Like</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close" id="close-things-i-like"></button>
+            </div>
+          </div>
+          <div class="window-body" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start; padding-left: 12px; padding-right: 12px; padding-bottom: 0;">
+            <div style="font-size: 1.08em; color: #2b4a6d; line-height: 1.5; word-break: break-word;">
+              <ul style="margin: 0 0 0 18px; padding: 0; list-style: disc;">
+                <li>Kingdom Come Deliverance</li>
+                <li>Mafia games</li>
+                <li>Isonzo</li>
+                <li>Dead by Daylight</li>
+                <li>Arma games</li>
+                <li>Aliens</li>
+                <li>War of Rights</li>
+                <li>Megaman X</li>
+                <li>Arcane</li>
+                <li>Five Nights at Freddy's</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       <div class="window active" id="patch-notes-window" style="display:none; max-width: 320px; min-width: 200px; min-height: 120px; position: absolute; left: 50%; top: 220px; transform: translateX(-50%); z-index: 9999; flex-direction: column;">
         <div class="title-bar">
           <div class="title-bar-text">Patch Notes</div>
@@ -1110,7 +1111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Popup sentences
       const popupSentences = [
         "I like my friends.",
-        "I make pizzas for a living.",
+        "I cooka da pizza.",
         "yeah, Im def getting freaky at five freaks at freakys",
         "Pizzles must be yanked!!!",
         '"Megadyke. lesbian Megamind"',
@@ -1132,6 +1133,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var changeWallpaperBtn = document.getElementById('change-wallpaper');
         var fullscreenBtn = document.getElementById('fullscreen-window');
         var mainWindow = document.querySelector('.window.active');
+    var thingsILikeTrigger = document.getElementById('things-i-like-trigger');
+    var thingsILikeWindow = document.getElementById('things-i-like-window');
+    var closeThingsILikeBtn = document.getElementById('close-things-i-like');
         if (exitBtn) {
           exitBtn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1210,6 +1214,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               img.style.borderRadius = '8px';
               img.style.marginRight = '8px';
               contentBox.appendChild(img);
+            } else if (sentence === 'I cooka da pizza.') {
+              var img = document.createElement('img');
+              img.src = './images/gifs/pizza.gif';
+              img.alt = 'Pizza';
+              img.style.width = '36px';
+              img.style.height = '36px';
+              img.style.display = 'block';
+              img.style.borderRadius = '8px';
+              img.style.marginRight = '8px';
+              contentBox.appendChild(img);
             }
             var textDiv = document.createElement('div');
             textDiv.textContent = sentence;
@@ -1243,6 +1257,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             patchNotesWindow.style.display = 'none';
           });
         }
+
+          // Things I Like popup logic
+          if (thingsILikeTrigger && thingsILikeWindow && closeThingsILikeBtn) {
+            // Show only on click
+            thingsILikeTrigger.addEventListener('click', function(e) {
+              e.preventDefault();
+              thingsILikeWindow.style.display = 'flex';
+            });
+            closeThingsILikeBtn.addEventListener('click', function() {
+              thingsILikeWindow.style.display = 'none';
+            });
+          }
       });
     </script>
   </div>
